@@ -36,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-ALLOWED_HOSTS = ['djcrm-cung.herokuapp.com']
+ALLOWED_HOSTS = ['djcrm-cung.herokuapp.com/']
 
 # Application definition
 # Every time you create a new app, register it here
