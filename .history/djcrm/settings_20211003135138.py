@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import environ
-import os
-import django_heroku
-
 
 
 env = environ.Env(
@@ -36,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-ALLOWED_HOSTS = ['khuulecung.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 # Every time you create a new app, register it here
@@ -149,8 +146,7 @@ USE_TZ = True
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = "/static/"
-django_heroku.settings(locals())
+STATIC_URL = 
 
 
 # Default primary key field type
