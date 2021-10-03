@@ -26,7 +26,7 @@ env = environ.Env(
 # if READ_DOT_ENV_FILE:
 environ.Env.read_env()
 
-DEBUG = True
+DEBUG = env('DEBUG')
 SECRET_KEY = 'django-insecure-$ex=16$7aqg$!=)y3i*!x((&#q1w0*idj3+rq$dmhkdj#w=7^n'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -96,11 +96,11 @@ WSGI_APPLICATION = 'djcrm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8o3qvinlvb2cn',
-        'USER': 'wmjahxyjqtfrlb',
-        'PASSWORD': '73569669498c60331ac9775fe2b8f377ea60f442b2b423b1b5cbfbeaed07553b',
-        'HOST': 'ec2-100-24-169-249.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env("DB_PASSWORD"),
+        'HOST': env("DB_HOST"),
+        'PORT': env("DB_PORT"),
     }
 }
 
