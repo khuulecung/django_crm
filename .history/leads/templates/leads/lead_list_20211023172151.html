@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="text-gray-700 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap">
+      <div class="w-full mb-6 py-6 flex justify-between items-center border-b border-gray-200">
+          <div>
+              <h1 class="text-4xl text-gray-800">Leads</h1>
+              <a class="text-gray-500 hover:text-blue-500" href="{% url 'leads:category_list' %}">
+                  View categories
+              </a>
+          </div>
+          {% if request.user.is_organisor %}
+          <div>
+              <a class="text-gray-500 hover:text-blue-500" href="{% url 'leads:lead-create' %}">
+                  Create a new lead
+              </a>
+          </div>
+          {% endif %}
+      </div>
+
+      
+  <div class="flex flex-col w-full">
+    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Cell Phone</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        
+      </table>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}}
